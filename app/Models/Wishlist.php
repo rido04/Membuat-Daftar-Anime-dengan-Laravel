@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Wishlist extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'anime_id', 'title', 'anime_image'];
+    protected $fillable = [
+        'user_id',
+        'anime_id',
+        'title',
+        'anime_image'
+    ];
 }

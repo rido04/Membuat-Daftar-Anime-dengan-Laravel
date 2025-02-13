@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->integer('anime_id');
-            $table->string('title')->nullable(); // Pastikan ini ada
-            $table->string('image_url')->nullable();
+            $table->unsignedBigInteger('anime_id');
+            $table->string('title');
+            $table->string('anime_image');
             $table->timestamps();
         });
 
