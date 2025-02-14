@@ -22,7 +22,7 @@ class WishlistController extends Controller
                             ->first();
 
         if ($existing) {
-            return redirect()->back()->with('error', 'Anime sudah ada di wishlist!');
+            return redirect()->back()->with('error', 'This Anime is already in your wishlist!');
         }
 
         Wishlist::create([
@@ -32,7 +32,7 @@ class WishlistController extends Controller
             'anime_image' => $request->image_url
         ]);
 
-        return redirect()->back()->with('success', 'Anime ditambahkan ke wishlist!');
+        return redirect()->back()->with('success', 'Added to wishlist!');
     }
 
     public function destroy($id)
@@ -44,6 +44,6 @@ class WishlistController extends Controller
         }
 
         $wishlist->delete();
-        return redirect()->route('wishlist.index')->with('success', 'Anime dihapus dari wishlist.');
+        return redirect()->route('wishlist.index')->with('success', 'This Anime deleted from wishlist!');
     }
 }

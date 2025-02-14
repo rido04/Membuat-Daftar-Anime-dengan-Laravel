@@ -9,19 +9,35 @@ use Illuminate\Support\Facades\Http;
 class AnimeController extends Controller
 {
     // untuk menampilkan list anime
-    public function index()
+    public function index(Request $request)
     {
-        $page = request()->query('page', 1); // Ambil page dari URL, default 1
+        $page = $request->query('page', 1); // Ambil page dari URL, default 1
+        $sort = $request->input('sort', 'title'); // Default sorting by title
+        $order = $request->input('order', 'asc'); // Default ascending order
+
         $response = Http::get("https://api.jikan.moe/v4/top/anime?page={$page}");
 
         $anime = $response->json();
 
         if (!$response->successful() || !isset($anime['data'])) {
-            return back()->with('error', 'Gagal mengambil data anime dari API.');
+            return back()->with('error', 'Failed to fetch anime data from API.');
+        }
+
+        $query = collect($anime['data']);
+
+        // Sorting logic
+        if ($sort == 'score') {
+            $query = $query->sortByDesc('score');
+        } elseif ($sort == 'title') {
+            $query = $query->sortBy('title');
+        } elseif ($sort == 'episodes') {
+            $query = $query->sortByDesc('episodes');
         }
 
         return view('anime.index', [
-            'anime' => $anime['data'],
+            'anime' => $query,
+            'sort' => $sort,
+            'order' => $order,
             'currentPage' => $page // Kirim ke view
         ]);
     }
@@ -34,7 +50,7 @@ class AnimeController extends Controller
 
         // Cek apakah user memasukkan sesuatu
         if (!$query) {
-            return redirect('/anime')->with('error', 'Silakan masukkan keyword pencarian!');
+            return redirect('/anime')->with('error', 'Please enter a valid keyword.');
         }
 
         // Ambil data anime berdasarkan pencarian di Jikan API
@@ -47,7 +63,7 @@ class AnimeController extends Controller
         Log::info(json_encode($animeList, JSON_PRETTY_PRINT));
 
         if (!$response->successful() || !isset($animeList['data']) || empty($animeList['data'])) {
-            return back()->with('error', 'Anime tidak ditemukan atau API bermasalah.');
+            return back()->with('error', 'Anime not found or API issue.');
         }
 
         return view('anime.index', [
@@ -71,7 +87,7 @@ class AnimeController extends Controller
         Log::info(json_encode($animeList, JSON_PRETTY_PRINT));
 
         if (!$response->successful() || !isset($animeList['data'])) {
-            return back()->with('error', 'Gagal mengambil data dari API. Coba lagi nanti.');
+            return back()->with('error', 'Failed to fetch data from API. Please try again later.');
         }
 
         return view('anime.index', [
@@ -93,7 +109,7 @@ class AnimeController extends Controller
 
         // Jika respons tidak valid atau tidak ada key 'data'
         if (!$response->successful() || !isset($anime['data'])) {
-            return back()->with('error', 'Anime tidak ditemukan atau API sedang bermasalah.');
+            return back()->with('error', 'Anime not found or API issue.');
         }
 
         return view('anime.show', ['anime' => $anime['data']]);
