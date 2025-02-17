@@ -20,7 +20,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <a href="{{ route('anime.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md text-center hover:bg-blue-600 transition dark:bg-blue-700 dark:hover:bg-blue-800">View Anime List</a>
             <a href="{{ route('wishlist.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md text-center hover:bg-blue-600 transition dark:bg-blue-700 dark:hover:bg-blue-800">View Wishlist</a>
-            <a href="{{ route('profile.edit') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md text-center hover:bg-blue-600 transition dark:bg-blue-700 dark:hover:bg-blue-800">Edit Profile</a>
+            <a href="{{ route('profile.show') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md text-center hover:bg-blue-600 transition dark:bg-blue-700 dark:hover:bg-blue-800">Profile</a>
         </div>
     </div>
 @endsection

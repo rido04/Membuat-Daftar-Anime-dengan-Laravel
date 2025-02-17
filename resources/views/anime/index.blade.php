@@ -31,7 +31,7 @@
         {{-- search form --}}
         <form action="{{ route('anime.search') }}" method="GET" class="mb-6 flex justify-center">
             <input type="text" name="query" placeholder="Search anime..." class="p-2 border border-gray-300 rounded-l-md w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300" autocomplete="off">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Search</button>
+            <button type="submit" class="bg-slate-500 text-white px-4 py-2 rounded-r-md hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Search</button>
         </form>
 
         {{-- genre filter --}}
@@ -44,7 +44,7 @@
                 <option value="8">Drama</option>
                 <option value="10">Fantasy</option>
             </select>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Filter</button>
+            <button type="submit" class="bg-slate-500 text-white px-4 py-2 rounded-r-md hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Filter</button>
         </form>
 
         {{-- sorting form --}}
@@ -58,7 +58,7 @@
                 <option value="asc" {{ request('order') == 'asc' ? 'selected' : '' }}>Ascending</option>
                 <option value="desc" {{ request('order') == 'desc' ? 'selected' : '' }}>Descending</option>
             </select>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 ml-2 focus:outline-none focus:ring-2 focus:ring-blue-500">Sort</button>
+            <button type="submit" class="bg-slate-500 text-white px-4 py-2 rounded-md hover:bg-slate-600 ml-2 focus:outline-none focus:ring-2 focus:ring-blue-500">Sort</button>
         </form>
 
         {{-- loading spinner --}}
@@ -83,7 +83,7 @@
                         <input type="hidden" name="anime_id" value="{{ $a['mal_id'] }}">
                         <input type="hidden" name="title" value="{{ $a['title'] }}">
                         <input type="hidden" name="image_url" value="{{ $a['images']['jpg']['image_url'] }}">
-                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">Add to Wishlist</button>
+                        <button type="submit" class="bg-emerald-400 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-red-500">Add to Wishlist</button>
                     </form>
                 </div>
             @endforeach

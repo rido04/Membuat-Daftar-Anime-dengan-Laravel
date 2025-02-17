@@ -18,7 +18,7 @@
 
                     <div class="mb-4">
                         <label for="email" class="block text-gray-700 dark:text-gray-300">{{ __('Email Address') }}</label>
-                        <input id="email" type="email" class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300 @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="email" type="email" class="form-input  rounded-full w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300 @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
@@ -26,7 +26,7 @@
 
                     <div class="mb-4">
                         <label for="password" class="block text-gray-700 dark:text-gray-300">{{ __('Password') }}</label>
-                        <input id="password" type="password" class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300 @error('password') border-red-500 @enderror" name="password" required autocomplete="current-password">
+                        <input id="password" type="password" class="form-input rounded-full w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300 @error('password') border-red-500 @enderror" name="password" required autocomplete="current-password">
                         @error('password')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full hover:bg-blue-600">
+                        <button type="submit" class="bg-blue-800 text-white px-4 py-2 rounded-full w-full hover:bg-blue-950">
                             {{ __('Login') }}
                         </button>
                     </div>
