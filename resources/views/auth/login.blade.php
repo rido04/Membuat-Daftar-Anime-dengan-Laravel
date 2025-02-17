@@ -4,8 +4,8 @@
 <div class="container mx-auto p-6">
     <div class="flex justify-center">
         <div class="w-full max-w-md">
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-2xl font-bold text-center mb-6">{{ __('Login') }}</h2>
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+                <h2 class="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-gray-100">{{ __('Login') }}</h2>
 
                 @if (session('status'))
                     <div class="bg-green-500 text-white p-4 rounded-md mb-4">
@@ -17,16 +17,16 @@
                     @csrf
 
                     <div class="mb-4">
-                        <label for="email" class="block text-gray-700">{{ __('Email Address') }}</label>
-                        <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <label for="email" class="block text-gray-700 dark:text-gray-300">{{ __('Email Address') }}</label>
+                        <input id="email" type="email" class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300 @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="mb-4">
-                        <label for="password" class="block text-gray-700">{{ __('Password') }}</label>
-                        <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required autocomplete="current-password">
+                        <label for="password" class="block text-gray-700 dark:text-gray-300">{{ __('Password') }}</label>
+                        <input id="password" type="password" class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300 @error('password') border-red-500 @enderror" name="password" required autocomplete="current-password">
                         @error('password')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
@@ -34,8 +34,8 @@
 
                     <div class="mb-4">
                         <div class="flex items-center">
-                            <input type="checkbox" name="remember" id="remember" class="form-checkbox" {{ old('remember') ? 'checked' : '' }}>
-                            <label for="remember" class="ml-2 text-gray-700">{{ __('Remember Me') }}</label>
+                            <input type="checkbox" name="remember" id="remember" class="form-checkbox bg-gray-100 dark:bg-gray-700 dark:text-gray-300" {{ old('remember') ? 'checked' : '' }}>
+                            <label for="remember" class="ml-2 text-gray-700 dark:text-gray-300">{{ __('Remember Me') }}</label>
                         </div>
                     </div>
 
