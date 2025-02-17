@@ -6,7 +6,7 @@
              })">
 
     <button @click="darkMode = !darkMode"
-            class="p-2 mr-4 rounded-md bg-gray-200 dark:bg-gray-700">
+            class="p-2 ml-4 mr-4 rounded-md bg-gray-200 dark:bg-gray-700">
         <span x-show="!darkMode">🌞</span>
         <span x-show="darkMode">🌙</span>
     </button>
