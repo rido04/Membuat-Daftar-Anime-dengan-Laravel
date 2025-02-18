@@ -32,7 +32,7 @@ class WishlistController extends Controller
             'anime_image' => $request->image_url
         ]);
 
-        return redirect()->back()->with('success', 'Added to wishlist!');
+        return redirect()->route('wishlist.index')->with('success', 'Added to wishlist!');
     }
 
     public function destroy($id)
