@@ -31,8 +31,8 @@
     <div class="flex flex-col md:flex-row md:space-x-4 mb-6 justify-center">
         {{-- search form --}}
         <form action="{{ route('anime.search') }}" method="GET" class="flex mb-4 md:mb-0">
-            <input type="text" name="query" placeholder="Search anime..." class="p-2 border border-gray-300 rounded-l-md w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300" autocomplete="off">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Search</button>
+            <input type="text" name="query" placeholder="Search anime..." class="p-2 border border-gray-300 rounded-l-md w-64 focus:outline-none focus:ring-2 focus:ring-rose-600 dark:bg-gray-700 dark:text-gray-300" autocomplete="off">
+            <button type="submit" class="bg-rose-700 text-white px-4 py-2 rounded-r-md hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-400">Search</button>
         </form>
 
         {{-- genre filter --}}
@@ -45,7 +45,7 @@
                 <option value="8">Drama</option>
                 <option value="10">Fantasy</option>
             </select>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Filter</button>
+            <button type="submit" class="bg-rose-700 text-white px-4 py-2 rounded-r-md hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-400">Filter</button>
         </form>
 
         {{-- sorting form --}}
@@ -59,7 +59,7 @@
                 <option value="asc" {{ request('order') == 'asc' ? 'selected' : '' }}>Ascending</option>
                 <option value="desc" {{ request('order') == 'desc' ? 'selected' : '' }}>Descending</option>
             </select>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 ml-2 focus:outline-none focus:ring-2 focus:ring-blue-500">Sort</button>
+            <button type="submit" class="bg-rose-700 text-white px-4 py-2 rounded-md hover:bg-rose-800 ml-2 focus:outline-none focus:ring-2 focus:ring-rose-400">Sort</button>
         </form>
     </div>
 

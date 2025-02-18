@@ -18,12 +18,12 @@
 
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 dark:text-gray-300">Name</label>
-                    <input id="name" type="text" name="name" value="{{ old('name', $user->name) }}" required class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
+                    <input id="name" type="text" name="name" value="{{ old('name', $user->name) }}" required class="form-input rounded-full w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
                 </div>
 
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 dark:text-gray-300">Email</label>
-                    <input id="email" type="email" name="email" value="{{ old('email', $user->email) }}" required class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
+                    <input id="email" type="email" name="email" value="{{ old('email', $user->email) }}" required class="form-input rounded-full w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
                 </div>
 
                 <div class="mb-4">
@@ -31,7 +31,7 @@
                     @if ($user->avatar)
                         <img src="{{ asset('storage/' . $user->avatar) }}" alt="Avatar" class="w-20 h-20 rounded-full mb-4">
                     @endif
-                    <input id="avatar" type="file" name="avatar" class="form-input w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
+                    <input id="avatar" type="file" name="avatar" class="form-input rounded-full w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
                 </div>
 
                 <div class="mb-4">
